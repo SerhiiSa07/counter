@@ -1,0 +1,15 @@
+.titleCounter{
+    height: 100px;
+    width: 200px;
+    background-color: #7FFFD4;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.active{
+    color: red;
+}
+
+.counter{
+    color: black;
+}
