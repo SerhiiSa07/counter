@@ -1,5 +1,5 @@
 import React from "react";
-import b from "./Button.module.css"
+import b from "./Button2.module.css"
 
 type OwnPropertyType = {
     count: number
@@ -10,17 +10,19 @@ type OwnPropertyType = {
 
 }
 
-export function Button (props: OwnPropertyType) {
-
+export function Button2 (props: OwnPropertyType) {
 
     return(
         <div className={b.titleButton}>
-
-                <button className={b.customBtn} disabled={props.count === props.maxNumber} onClick={props.onClickInc}>inc</button>
-
-                <button className={b.customL} disabled={props.count === 0} onClick={props.onClickReset}>reset</button>
+                <div>
+                    <button className={b.customBtn} disabled={props.count === props.maxNumber}
+                            onClick={props.onClickInc}>inc
+                    </button>
+                </div>
+                <div>
+                    <button className={b.customL} disabled={props.count === 0} onClick={props.onClickReset}>reset
+                    </button>
+                </div>
         </div>
     )
-
-
 }

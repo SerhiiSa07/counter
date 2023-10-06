@@ -1,7 +1,9 @@
 .titleButton{
-    width: 220px;
-    margin-top: 15px;
-    padding-top: 20px;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 180px;
+    padding: 20px;
     background-color: #008B8B;
     border-radius: 20px;
 }
@@ -41,3 +43,4 @@
 .customL:hover{
     background-color: #DC143C;
 }
+

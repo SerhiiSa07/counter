@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Counter.module.css";
+import style from "./Counter2.module.css";
 
 type PropsType = {
     count: number
@@ -10,7 +10,7 @@ type PropsType = {
 
 }
 
-export function Counter (props: PropsType) {
+export function Counter2 (props: PropsType) {
 
     return(
             <div className={style.titleCounter}>
