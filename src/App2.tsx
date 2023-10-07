@@ -3,7 +3,7 @@ import './App.css';
 
 
 
-const initialCounters = [
+/*const initialCounters = [
     {
         id: 123,
         value: 0
@@ -16,23 +16,29 @@ const initialCounters = [
         id: 1111,
         value: -50
     }
-]
+]*/
 
 function App2 () {
 
     const maxNumber = 5;
-    let [count, setCount] = useState(initialCounters);
+    let [count, setCount] = React.useState(0);
     const [status, setStatus] = useState<boolean>(false)
 
 /*    const [editMode, setEditMode] = useState<boolean>(false)*/
 
-    const onClickInc = (id: number) => {
-        const updatedCounts = count.map(el => el.id === id ? {...el, value: el.value + 1} : el)
-        setCount(updatedCounts)
+
+    function onClickInc () {
+        if (count < maxNumber) {
+            setCount(count + 1 )
+        }
+        if (count === 4) {
+            setStatus(true)
+        }
     }
+
     function onClickReset () {
-        /*setCount(0)
-        setStatus(false)*/
+        setCount(0)
+        setStatus(false)
     }
 
     function errorMin () {
@@ -47,17 +53,37 @@ function App2 () {
 
     }
 
+    function showInput(event: any) {
+        setCount(event.target.value)
+    }
+
+    let numberInput = React.createRef<HTMLInputElement>();
+
     return(
 
         <div className="App">
-            {count.map(el => (
-                <li key={el.id}>
-                    <button onClick={() => onClickInc(el.id)}>Inc</button>
-                        {el.value}
-                    <button onClick={onClickReset}>Reset</button>
-                        {el.value}
-                </li>
-            ))}
+
+            <h2>
+                Count:
+            </h2>
+            <h1>
+                {count}
+            </h1>
+            <div>
+                Max number:{" "}
+                <input type="number" />
+            </div>
+            <div>
+                Min number:{" "}
+                <input type="number" onInput={showInput} ref={numberInput}/>
+            </div>
+            <div>
+                <button onClick={onClickInc}>Inc</button>
+                <button onClick={onClickReset}>Reset</button>
+            </div>
+            <div>
+                <button onClick={showInput}>Save</button>
+            </div>
         </div>
 
     )
