@@ -1,35 +1,38 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Counter} from "./components/counter/Counter";
-import {Button} from "./components/interface/Button";
-import {Counter2} from "./components/counter/Counter2";
-import {Button2} from "./components/interface/Button2";
-import {CounterSetUp} from "./components/counterSetUp/CounterSetUp";
-import d from "./app.module.css"
+
+
+
+const initialCounters = [
+    {
+        id: 123,
+        value: 0
+    },
+    {
+        id: 234,
+        value: 110
+    },
+    {
+        id: 1111,
+        value: -50
+    }
+]
 
 function App2 () {
 
     const maxNumber = 5;
-    let [count, setCount] = useState(0)
+    let [count, setCount] = useState(initialCounters);
     const [status, setStatus] = useState<boolean>(false)
-    let [maxValue, setMaxValue] = useState(1000)
-    let [startValue, setStartValue] = useState(0)
-    const [disable, setDisable] = useState<boolean>(false)
 
-    const [editMode, setEditMode] = useState<boolean>(false)
+/*    const [editMode, setEditMode] = useState<boolean>(false)*/
 
-    function onClickInc () {
-        if (count < maxNumber) {
-            setCount(count + 1 )
-        }
-        if (count === 4) {
-            setStatus(true)
-        }
+    const onClickInc = (id: number) => {
+        const updatedCounts = count.map(el => el.id === id ? {...el, value: el.value + 1} : el)
+        setCount(updatedCounts)
     }
-
     function onClickReset () {
-        setCount(0)
-        setStatus(false)
+        /*setCount(0)
+        setStatus(false)*/
     }
 
     function errorMin () {
@@ -37,8 +40,7 @@ function App2 () {
     }
 
     function errorMax () {
-        setMaxValue(0)
-        setStatus(true)
+
     }
 
     function onClickSave (){
@@ -48,11 +50,14 @@ function App2 () {
     return(
 
         <div className="App">
-            <div className={d.background}>
-            <Counter2 count={count} onClickInc={onClickInc} onClickReset={onClickReset} status={status} maxNumber={maxNumber}/>
-            <Button2 count={count} onClickInc={onClickInc} onClickReset={onClickReset} status={status}  maxNumber={maxNumber}/>
-            </div>
-            <CounterSetUp count={count} onClickInc={onClickInc} onClickReset={onClickReset} status={status} maxNumber={maxNumber}/>
+            {count.map(el => (
+                <li key={el.id}>
+                    <button onClick={() => onClickInc(el.id)}>Inc</button>
+                        {el.value}
+                    <button onClick={onClickReset}>Reset</button>
+                        {el.value}
+                </li>
+            ))}
         </div>
 
     )

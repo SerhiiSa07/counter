@@ -13,13 +13,12 @@ type OwnPropertyType = {
 export function Button (props: OwnPropertyType) {
 
     return(
+
         <div className={b.titleButton}>
 
             <button className={b.customBtn} disabled={props.count === props.maxNumber} onClick={props.onClickInc}>inc</button>
+            <button className={b.customL} disabled={props.count === 0} onClick={props.onClickReset}>reset</button>
 
-                <button className={b.customL} disabled={props.count === 0} onClick={props.onClickReset}>reset</button>
         </div>
     )
-
-
 }
