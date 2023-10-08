@@ -4,7 +4,16 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
 import {CounterStateType} from "../../store/counter-reducer";
 
-export function Counter2() {
+type PropsType = {
+    count: number
+    onClickInc: () => void
+    onClickReset: () => void
+    status: boolean
+    maxNumber: number
+
+}
+
+export function Counter2(props: PropsType) {
 
     const maxNumber = 5;
 
@@ -34,7 +43,6 @@ export function Counter2() {
     const onClickSave = () => {
         const el =
             minNumberInput.current as HTMLInputElement;
-
         setCount(el.valueAsNumber)
     }
 
@@ -49,12 +57,9 @@ export function Counter2() {
 
     return (
         <div className={style.wrapper}>
-            <h2>
-                Count:
-            </h2>
-            <h1>
-                {count}
-            </h1>
+            <div className={style.titleCounter}>
+                <h1 className={props.status ? style.active : style.counter }>{props.count}</h1>
+            </div>
             <div>
                 Max number:
                 <br/>
