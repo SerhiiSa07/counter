@@ -17,6 +17,5 @@ export function Counter (props: PropsType) {
             <h1 className={props.status ? style.active : style.counter }>{props.count}</h1>
             </div>
     )
-
 }
 
