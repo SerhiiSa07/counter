@@ -1,17 +1,19 @@
 
 const initialState = {
-    minValue: 0,
-    maxValue: 5,
+    minCount: 0,
+    maxCount: 5,
     count: 0,
-    isStatus: true,
+    setStatus: true,
 }
 
 export type CounterStateType = {
-    minValue: number,
-    maxValue: number,
+    minCount: number,
+    maxCount: number,
     count: number,
-    isStatus: boolean,
+    setStatus: boolean,
 }
+
+
 
 export const counterReducer = (state: CounterStateType = initialState, action: ActionType): CounterStateType => {
     switch (action.type) {
@@ -22,17 +24,17 @@ export const counterReducer = (state: CounterStateType = initialState, action: A
         }
         case 'RESET-VALUE': {
             return {
-                ...state, minValue: state.minValue
+                ...state, minCount: state.minCount
             }
         }
-        case 'SET-MIN-VALUE': {
+        case 'MIN-COUNT': {
             return {
-                ...state, minValue: action.minValue
+                ...state, minCount: action.minCount
             }
         }
-        case 'SET-MAX-VALUE': {
+        case 'MAX-COUNT': {
             return {
-                ...state, maxValue: action.maxValue
+                ...state, maxCount: action.maxCount
             }
         }
         case 'SET-COUNT-VALUE': {
@@ -40,9 +42,9 @@ export const counterReducer = (state: CounterStateType = initialState, action: A
                 ...state, count: action.count
             }
         }
-        case 'SET-STATUS-VALUE': {
+        case 'SET-STATUS': {
             return {
-                ...state, isStatus: action.isStatus
+                ...state, setStatus: action.setStatus
             }
         }
         default:
@@ -53,14 +55,14 @@ export const counterReducer = (state: CounterStateType = initialState, action: A
 type ActionType =
     ReturnType<typeof incValueAC>
     | ReturnType<typeof resetValueAC>
-    | ReturnType<typeof setMinValueAC>
-    | ReturnType<typeof setMaxValueAC>
-    | ReturnType<typeof isStatusAC>
+    | ReturnType<typeof minCountAC>
+    | ReturnType<typeof maxCountAC>
+    | ReturnType<typeof setStatusAC>
     | ReturnType<typeof setCountValueAC>
 
 export const incValueAC = () => ({type: 'INC-VALUE'}) as const
 export const resetValueAC = () => ({type: 'RESET-VALUE'}) as const
-export const setMinValueAC = (minValue: number) => ({type: 'SET-MIN-VALUE', minValue}) as const
-export const setMaxValueAC = (maxValue: number) => ({type: 'SET-MAX-VALUE', maxValue}) as const
+export const minCountAC = (minCount: number) => ({type: 'MIN-COUNT', minCount}) as const
+export const maxCountAC = (maxCount: number) => ({type: 'MAX-COUNT', maxCount}) as const
 export const setCountValueAC = (count: number) => ({type: 'SET-COUNT-VALUE', count}) as const
-export const isStatusAC = (isStatus: boolean) => ({type: 'SET-STATUS-VALUE', isStatus}) as const
+export const setStatusAC = (setStatus: boolean) => ({type: 'SET-STATUS', setStatus}) as const

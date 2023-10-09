@@ -1,21 +1,14 @@
-import React from "react";
-import b from "./Button.module.css"
+import React from 'react';
 
-type OwnPropertyType = {
-    count: number
-    onClickInc: () => void
-    onClickReset: () => void
-    status: boolean
-    maxNumber: number
-
+type PropsType = {
+    title: string
+    callback: () => void
+    className: string
+    disabled?: boolean
 }
 
-export function Button (props: OwnPropertyType) {
-
-    return(
-        <div className={b.titleButton}>
-            <button className={b.customBtn} disabled={props.count === props.maxNumber} onClick={props.onClickInc}>inc</button>
-            <button className={b.customL} disabled={props.count === 0} onClick={props.onClickReset}>reset</button>
-        </div>
-    )
-}
+export const Button: React.FC<PropsType> = ({title, callback, className, ...props}) => {
+    return (
+        <button onClick={callback} className={className} disabled={props.disabled}>{title}</button>
+    );
+};

@@ -1,15 +1,57 @@
-.titleCounter{
-    height: 100px;
-    width: 200px;
-    background-color: #7FFFD4;
-    border-radius: 20px;
-    padding: 10px;
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+    width: 1024px;
 }
 
-.active{
-    color: red;
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    height: 270px;
+    margin: 50px auto;
+    border: 3px solid #64D8FB;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
 }
 
-.counter{
-    color: black;
+.buttonsBlock {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    width: 280px;
+    height: 50px;
+    border: 2px solid #64D8FB;
+    border-radius: 10px;
+}
+
+.button {
+    margin: 10px;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #64D8FB;
+}
+
+.button:hover {
+    box-shadow: 0 0 15px #64D8FB;
+    cursor: pointer;
+}
+
+.button:disabled {
+    box-shadow: none;
+    background-color: black;
+    color: #64D8FB;
+    border: 1px solid #64D8FB;
+}
+
+@media screen and (min-width: 320px) and (max-width: 660px) {
+    .wrapper {
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
 }
