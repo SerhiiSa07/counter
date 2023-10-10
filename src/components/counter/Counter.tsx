@@ -39,19 +39,25 @@ export function Counter () {
                     </div>
                 </div>
             </div>
-            <div className={style.counter}>wrapper
-                <Display/>
+            <div className={style.counter}>
+                <Display />
+
                 <div className={style.buttonsBlock}>
                     <div>
-                        <Button title={'inc'} className={style.button} disabled={count === maxCount || setStatus}
+                        <Button title={'inc'}
+                                className={style.button}
+                                disabled={count === maxCount || setStatus}
                                 callback={onClickInc}
                         />
+
                     </div>
-                </div>
-                <div>
-                    <Button title={'reset'} className={style.button} disabled={count === maxCount || setStatus}
-                            callback={onClickReset}
-                    />
+                    <div>
+                        <Button title={'reset'}
+                                className={style.button}
+                                disabled={count === maxCount || setStatus}
+                                callback={onClickReset}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

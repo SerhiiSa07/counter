@@ -1,5 +1,5 @@
 import React from 'react';
-import s from "./Display.module.css"
+import s from "../interface/Display.module.css"
 import {useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
 import {CounterStateType} from "../../store/counter-reducer";
