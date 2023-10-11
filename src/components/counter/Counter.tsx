@@ -8,8 +8,7 @@ import {Button} from "../interface/Button";
 import {Display} from "../interface/Display";
 
 
-
-export function Counter () {
+export const Counter = () => {
 
     const {minCount, maxCount, count, setStatus} = useSelector<AppStateType, CounterStateType>(state => state.counter)
     const dispatch = useDispatch()
@@ -27,13 +26,14 @@ export function Counter () {
     }
 
     return(
+
         <div className={style.wrapper}>
             <div className={style.counter}>
                 <Settings/>
                 <div className={style.buttonsBlock}>
                     <div>
                         <Button title={'save'} className={style.button}
-                                disabled={count >= minCount || minCount < 0 || !setStatus}
+                                disabled={minCount >= maxCount || minCount < 0 || !setStatus}
                                 callback={onClickSave}
                         />
                     </div>
@@ -41,7 +41,6 @@ export function Counter () {
             </div>
             <div className={style.counter}>
                 <Display />
-
                 <div className={style.buttonsBlock}>
                     <div>
                         <Button title={'inc'}
@@ -49,12 +48,11 @@ export function Counter () {
                                 disabled={count === maxCount || setStatus}
                                 callback={onClickInc}
                         />
-
                     </div>
                     <div>
                         <Button title={'reset'}
                                 className={style.button}
-                                disabled={count === maxCount || setStatus}
+                                disabled={count === minCount || setStatus}
                                 callback={onClickReset}
                         />
                     </div>
@@ -63,4 +61,3 @@ export function Counter () {
         </div>
     )
 }
-

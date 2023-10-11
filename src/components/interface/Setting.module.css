@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 280px;
+    width: 320px;
     height: 130px;
     margin: auto;
     border: 2px solid #64D8FB;
@@ -32,4 +32,9 @@
     outline: none;
     border: 2px solid #f81b1b;
     background-color: #e37c8f;
+}
+
+.settingsBlockInput{
+    display: flex;
+    align-items: center;
 }

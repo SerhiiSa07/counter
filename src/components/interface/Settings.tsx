@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
 import {CounterStateType, maxCountAC, minCountAC, setStatusAC} from "../../store/counter-reducer";
 
-export function Settings () {
+export const Settings = () => {
 
     const {minCount, maxCount} = useSelector<AppStateType, CounterStateType>(state => state.counter)
     const dispatch = useDispatch()
@@ -17,7 +17,6 @@ export function Settings () {
         dispatch(setStatusAC(true))
         dispatch(minCountAC(+e.currentTarget.value))
     }
-
 
     return(
         <div className={st.wrapper}>

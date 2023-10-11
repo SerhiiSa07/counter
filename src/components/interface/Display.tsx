@@ -4,8 +4,6 @@ import {useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
 import {CounterStateType} from "../../store/counter-reducer";
 
-
-
 export const Display= () => {
     const {minCount, maxCount, count, setStatus} = useSelector<AppStateType, CounterStateType>(state => state.counter)
 

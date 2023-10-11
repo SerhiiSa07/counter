@@ -3,7 +3,7 @@ const initialState = {
     minCount: 0,
     maxCount: 5,
     count: 0,
-    setStatus: true,
+    setStatus: true
 }
 
 export type CounterStateType = {
