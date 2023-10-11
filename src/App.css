@@ -1,4 +1,8 @@
-.App{
-background-size: cover;
+body{
+    background-image: url('img/unsplash-scaled.webp');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
 }
+
 
