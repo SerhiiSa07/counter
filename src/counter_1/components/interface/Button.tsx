@@ -12,3 +12,6 @@ export const Button: React.FC<PropsType> = ({title, callback, className, ...prop
         <button onClick={callback} className={className} disabled={props.disabled}>{title}</button>
     );
 };
+
+
+

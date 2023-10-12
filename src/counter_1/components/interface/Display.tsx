@@ -1,8 +1,8 @@
 import React from 'react';
-import s from "../interface/Display.module.css"
+import s from "./Display.module.css"
 import {useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
-import {CounterStateType} from "../../store/counter-reducer";
+import {CounterStateType} from "../../reducer/counter-reducer";
 
 export const Display= () => {
     const {minCount, maxCount, count, setStatus} = useSelector<AppStateType, CounterStateType>(state => state.counter)

@@ -1,4 +1,3 @@
-
 const initialState = {
     minCount: 0,
     maxCount: 5,
@@ -12,8 +11,6 @@ export type CounterStateType = {
     count: number,
     setStatus: boolean,
 }
-
-
 
 export const counterReducer = (state: CounterStateType = initialState, action: ActionType): CounterStateType => {
     switch (action.type) {

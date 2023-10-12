@@ -2,11 +2,10 @@ import React from "react";
 import style from "./Counter.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
-import {CounterStateType, setCountValueAC, setStatusAC} from "../../store/counter-reducer";
+import {CounterStateType, setCountValueAC, setStatusAC} from "../../reducer/counter-reducer";
 import {Settings} from "../interface/Settings";
 import {Button} from "../interface/Button";
 import {Display} from "../interface/Display";
-
 
 export const Counter = () => {
 

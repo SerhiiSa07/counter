@@ -1,5 +1,5 @@
 import {combineReducers, createStore} from 'redux';
-import {counterReducer} from './counter-reducer';
+import {counterReducer} from '../reducer/counter-reducer';
 import {loadState, saveState} from '../localstorage/localstorage';
 
 

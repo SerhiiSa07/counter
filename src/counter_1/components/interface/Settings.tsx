@@ -1,8 +1,8 @@
 import React, {ChangeEvent} from "react";
-import st from "../interface/Setting.module.css";
+import st from "./Setting.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
-import {CounterStateType, maxCountAC, minCountAC, setStatusAC} from "../../store/counter-reducer";
+import {CounterStateType, maxCountAC, minCountAC, setStatusAC} from "../../reducer/counter-reducer";
 
 export const Settings = () => {
 
