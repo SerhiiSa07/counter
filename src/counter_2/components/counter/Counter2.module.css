@@ -1,0 +1,57 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+    width: 1024px;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px;
+    height: 270px;
+    margin: 50px auto;
+    border: 3px solid #008B8B;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.buttonsBlock {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    width: 280px;
+    height: 50px;
+    border: 2px solid #008B8B;
+    border-radius: 10px;
+}
+
+.button {
+    margin: 10px;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #00FFFF;
+}
+
+.button:hover {
+    box-shadow: 0 0 15px #00CCCC;
+    cursor: pointer;
+}
+
+.button:disabled {
+    box-shadow: none;
+    background-color: #a4a3a4;
+    color: black;
+    border: 1px solid #008B8B;
+}
+
+@media screen and (min-width: 320px) and (max-width: 660px) {
+    .wrapper {
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
+}

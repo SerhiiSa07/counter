@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 130px;
+    margin: auto;
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    color: #33CCCC;
+}
+
+.defaultInput {
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    outline: none;
+    border: 2px solid #00FFFF;
+}
+
+.errorInput {
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    outline: none;
+    border: 3px solid #33CCCC;
+    background-color: #be2525;
+}
+
+.settingsBlockInput{
+    display: flex;
+    align-items: center;
+}
