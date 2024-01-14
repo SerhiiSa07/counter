@@ -1,5 +1,7 @@
+import {Dispatch} from "redux";
+
 const initialState = {
-    value: 125
+    value: 0
 }
 
 export const counterReducer = (state:InitialStateType = initialState, action: ActionType): InitialStateType => {
@@ -22,6 +24,13 @@ export const setValueFromLocalStorageAC = (value: number) => ({type: 'SET-VALUE-
 
 type InitialStateType = typeof initialState
 
-export type IncValuesActionType = ReturnType<typeof incValueAC>
-export type setValueFromLocalStorageActionStorage = ReturnType<typeof setValueFromLocalStorageAC>
-type ActionType = IncValuesActionType | setValueFromLocalStorageActionStorage
+export type IncValueActionType = ReturnType<typeof incValueAC>
+export type SetValueFromLocalStorageActionStorage = ReturnType<typeof setValueFromLocalStorageAC>
+
+//Thunk
+export const incValuesTC = (value: number) => (dispatch: Dispatch) => {
+    localStorage.setItem('counterValue', JSON.stringify(value))
+    dispatch(incValueAC())
+}
+
+type ActionType = IncValueActionType | SetValueFromLocalStorageActionStorage
