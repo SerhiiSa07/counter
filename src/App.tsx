@@ -1,18 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import {Counter2} from "./counter_2/components/counter/Counter2";
 import {Counter} from "./counter_1/components/counter/Counter";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "./bll/store";
-import {incValueAC, incValuesTC} from "./bll/counter-reducer";
+import {incValueAC, incValuesTC, setValueFromLocalStorageAC, setValueFromLocalStorageTC} from "./bll/counter-reducer";
 
 function App() {
 
     const value = useSelector<AppStateType, number>( state => state.counter.value)
     const dispatch = useDispatch()
 
+    useEffect( () => {
+        dispatch(setValueFromLocalStorageTC())
+    }, [])
+
     const incHandler = () => {
-    dispatch(incValuesTC(value))
+        dispatch(incValueAC())
+    /*dispatch(incValuesTC(value + 1))*/
     }
 
     return (
