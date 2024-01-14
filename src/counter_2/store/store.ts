@@ -6,14 +6,14 @@ const rootReducer = combineReducers({
     counter: counterReducer
 })
 
-export const store = createStore(rootReducer, getLocalStorage())
+export const store2 = createStore(rootReducer, getLocalStorage())
 
-store.subscribe(() => {
+store2.subscribe(() => {
     setToLocalStorage({
-        counter: store.getState().counter
+        counter: store2.getState().counter
     });
-    localStorage.setItem('app-state', JSON.stringify(store.getState()))
+    localStorage.setItem('app-state', JSON.stringify(store2.getState()))
 })
 
 export type AppStateType = ReturnType<typeof rootReducer>
-export type AppStoreType = typeof store
+export type AppStoreType = typeof store2
